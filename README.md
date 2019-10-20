@@ -5,11 +5,17 @@ A simple chat demo for socket.io
 
 How to use
 $ cd socket.io
+
 $ npm install
+
 $ cd examples/chat
+
 $ npm install
+
 $ npm start
+
 And point your browser to http://localhost:3000. Optionally, specify a port by supplying the PORT env variable.
+
 
 Features
 Multiple users can join a chat room by each entering a unique username on website load.

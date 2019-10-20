@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet"href="/css/css.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <script src="/socket.io-client/dist/socket.io.js"></script>
+    <script type="text/javascript" src="../javascripts/rolling/js/rolling.js"></script>
+    <script type="text/javascript"src="/cmain.js"></script>
+  </head>
+  <body>
+
+<ul class="pages">
+  <!-- 確認邀請配對 -->
+<div class="modal fade" id="countdown" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" id="cancelModal" data-dismiss="modal" aria-hidden="true">×
+      </button>
+      <h5 class="modal-title" id="myModalLabel">
+         <h6 id="secondData"></h6>
+      </h5>
+    </div>
+    <div class="modal-body">
+         <p id="modal-body1"></p>
+    </div>
+  </div>
+</div>
+</div>
+<!-- 聊天室介面 -->
+<div class="main_section">
+    <div class="container">
+        <div class="chat_container">
+            <div class="col-md-12 chat_sidebar">
+                <div class="row">
+                    <div class="title_head">
+                        <div class="center">
+                            <div class="pull-left">
+                                <strong class="primary-font">線上客服</strong>
+                            </div>
+                            <div class="pull-right">
+                                <input id="signout"type="image" src="https://cdn4.iconfinder.com/data/icons/miu/24/common-logout-signout-exit-glyph-16.png"  />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="chat_container">
+            <!--chat_sidebar-->
+            <div class="col-md-12 message_section">
+                <div class="row">
+                    <div class="chat_area">
+                        <ul class="list-unstyled">
+                        </ul>
+                    </div> <!--chat_area-->
+                    <div class="message_write">
+                        <textarea class="form-control" id="Message" placeholder="type a message"></textarea>
+                        <div class="clearfix"></div>
+                        <div class="chat_bottom">
+                            <a href="#" class="pull-left upload_btn">
+                                <i class="fa fa-cloud-upload" aria-hidden="true"></i>Add Files
+                            </a>
+                            <a href="#" class="pull-right btn btn-success" id="sendMessage">Send
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<li class="login">
+ <div class="scrollbar-macosx">
+ <div class="main container ">
+  <div class="jumbotron">
+    <h1></h1>
+    <button type="button" class="btn btn-danger"  onclick="javascript:location.href='http://localhost:3000'" >首頁</button>
+
+    <p class="user_portrait">
+      <img portrait_id="1" src="../images/user/1.png" alt="portrait_1">
+    </p>
+    <p class="select_portrait">
+      <img portrait_id="1" src="../images/user/1.png" alt="portrait_1" class="t" id="pic1">
+      <img portrait_id="2" src="../images/user/2.png" alt="portrait_1" id="pic2">
+      <img portrait_id="3" src="../images/user/3.png" alt="portrait_1" id="pic3">
+      <img portrait_id="4" src="../images/user/4.png" alt="portrait_1" id="pic4">
+      <img portrait_id="5" src="../images/user/5.png" alt="portrait_1" id="pic5">
+      <img portrait_id="6" src="../images/user/6.png" alt="portrait_1" id="pic6">
+      <img portrait_id="7" src="../images/user/7.png" alt="portrait_1" id="pic7">
+      <img portrait_id="8" src="../images/user/8.png" alt="portrait_1" id="pic8">
+      <img portrait_id="9" src="../images/user/9.png" alt="portrait_1" id="pic9">
+      <img portrait_id="10" src="../images/user/10.png" alt="portrait_1" id="pic10">
+      <img portrait_id="11" src="../images/user/11.png" alt="portrait_1" id="pic11">
+      <img portrait_id="12" src="../images/user/12.png" alt="portrait_1" id="pic12">
+    </p>
+
+      <div class="input-group">
+        <input type="text" id="customInput" class="form-control" maxlength="14" placeholder="登入使用者帳號" onfocus="this.value=''"><br><br><br>
+        <span class="input-group-btn">
+            <span class="glyphicon glyphicon-arrow-right"></span>
+        </span>
+      </div>
+
+  </div>
+  <div class="footer">
+    <span>多</span>人熱線中，缺你一個
+  </div>
+</div>
+</div>
+</li>
+</ul>
+
+  </body>
+</html>

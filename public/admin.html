@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+  <title>Socket.IO Chat Example</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="/socket.io-client/dist/socket.io.js"></script>
+  <!-- bs4表格 -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="../javascripts/rolling/js/rolling.js"></script>
+  <script type="text/javascript" src="../javascripts/Public.js"></script>
+  <script src="/admin.js"></script>
+</head>
+<body>
+
+<ul class="pages">
+  <li class="login">
+   <div class="scrollbar-macosx">
+	 <div class="main container ">
+		<div class="jumbotron">
+        <button type="button" class="btn btn-danger"  onclick="javascript:location.href='http://localhost:3000'" >首頁</button>
+        <h2>輸入正確密碼即可讀取員工上線狀態</h2>
+		  	<div class="input-group">
+        <input type="password" id="adminInput" class="form-control" maxlength="14" placeholder="填入密碼"><br />&nbsp;<br />
+        <button type="button" class="btn btn-primary btn-lg" id="messageRecord">對話紀錄</button>
+        <button type="button" class="btn btn-warning btn-lg" id="custSuggestion">顧客建議</button>
+        <!-- <button type="button" class="btn btn-warning btn-lg" id="www">顧客d建議</button> -->
+
+        <!--客服登入狀態顯示  -->
+        <table class="table table-hover" id="test">
+              <thead>
+            		<tr>
+            			<th>員工</th>
+            			<th>上線狀態</th>
+            			<th>和誰連線</th>
+                  <th>今日配對次數</th>
+                  <th>今日懶惰次數</th>
+            		</tr>
+            	</thead>
+              <tbody class="table-success"id="connect" >
+              </tbody>
+              <tbody class="table-warning"id="waitRepair">
+            	</tbody>
+              <tbody class="table-secondary" id="offline">
+            	</tbody>
+          </table>
+          <table class="table table-success table-hover" id="suggestionCustomer">
+                  <tr>
+                  </tr>
+            </table>
+			</div>
+      <select id="staffList">
+          <option   value="">員工列表</option>
+      </select>
+      <table class="table table-success table-hover" id="customMenber">
+              <tr>
+              </tr>
+        </table>
+		</div>
+    <div class="container">
+      <!-- The Modal -->
+      <div class="modal" id="myModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h1 class="modal-title">對話紀錄</h1>
+              <button type="button" class="close" data-dismiss="modal">×</button>
+            </div>
+            <!-- Modal body -->
+            <div class="modal-body">
+              <table class="table table-info table-hover" id="messageRecord1">
+                      <tr>
+                      </tr>
+                </table>
+            </div>
+            <!-- Modal footer -->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+		<div class="footer">
+			<span>多</span>人熱線中，缺你一個
+		</div>
+		</div>
+	 </div>
+  </li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,510 @@
+/* Fix user-agent */
+.login{
+	/* background: url('../images/1.jpg') ; */
+	background-size: cover;
+}
+* {
+  box-sizing: border-box;
+}
+body{ background-color: gray;}
+html {
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+}
+
+html, input {
+  font-family:
+    "HelveticaNeue-Light",
+    "Helvetica Neue Light",
+    "Helvetica Neue",
+    Helvetica,
+    Arial,
+    "Lucida Grande",
+    sans-serif;
+}
+
+html, body {
+  /* height: 100%; */
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+  word-wrap: break-word;
+}
+#bTop{ position:fixed; top:0; width:100%;z-index:1;  color:#ffd9eb ; background:#ddebeb; border-top:1px solid #336699;
+  border-bottom:1px solid #336699;height:2;}
+/* Pages */
+/* body {background-color: yellow} */
+.pages {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.page {
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+
+/* Login Page */
+
+
+/* Chat page */
+
+.chat.page {
+  display: none;
+}
+
+/* Font */
+
+.messages {
+  font-size: 200%;
+}
+
+.inputMessage {
+  font-size: 100%;
+}
+
+.log {
+	top:50px;
+	/* position:absolute; */
+  color: gray;
+  font-size: 30%;
+  margin: 7px;
+  text-align: center;
+}
+
+/* Messages */
+
+.chatArea {
+  height: 100%;
+  padding-bottom: 60px;
+}
+
+.messages {
+  height: 100%;
+  margin: auto;
+  /* overflow-y: scroll; */
+}
+.username {
+  font-weight: 1000;
+  overflow: hidden;
+  padding-right: 15px;
+  text-align: right;
+}
+
+/* Input */
+
+.inputMessage {
+  border: 10px solid #99FF99;
+  bottom: 0;
+  height: 60px;
+  left: 0;
+	bottom:0;
+  outline: none;
+  padding-left: 10px;
+  position: fixed;
+  right: 0;
+  width: 100%;
+}
+/* -- */
+/* 首頁button */
+#staffButton {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+#staffButton span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+#staffButton span:after {
+  content: '\266B';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+#staffButton:hover span {
+  padding-right: 25px;
+}
+
+#staffButton:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+#staffButton {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+#adminButton span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+#adminButton span:after {
+  content: '\21A0';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+#adminButton:hover span {
+  padding-right: 25px;
+}
+
+#adminButton:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+#adminButton {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+#customButton {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+#customButton span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+#customButton span:after {
+  content: '\219E';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+#customButton:hover span {
+  padding-right: 25px;
+}
+
+#customButton:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+#example1 span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+#example1 span:after {
+  content: '\21A0';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+#example1:hover span {
+  padding-right: 25px;
+}
+
+#example1:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+#example1 {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+/* width */
+/* ::-webkit-scrollbar {
+  width: 20px;
+}
+
+/* Track */
+/* ::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+} */
+
+/* Handle */
+/* ::-webkit-scrollbar-thumb {
+  background: red;
+  border-radius: 10px;
+} */ */
+ body>
+/*.vscrollbar-macosx{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+} */
+a{
+	cursor: pointer;
+	color: #eee;
+	text-decoration: none;
+}
+a:hover{
+	color: #fff;
+	text-decoration: none;
+}
+ul{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.container{
+	margin-top: 35px;
+	max-width: 992px;
+}
+
+.header{
+	position: fixed;
+	z-index: 7778;
+	width: 100%;
+	height: 35px;
+	/* background: url('../images/header_bg.png') repeat-x; */
+	color: #eee;
+}
+.header .toptext{
+	line-height: 35px;
+	padding: 0 15px;
+	float: left;
+}
+.header .topnavlist{
+	float: right;
+}
+.header .topnavlist>li{
+	width: 75px;
+	height: 35px;
+	line-height: 35px;
+	text-align: center;
+	float: left;
+}
+.header .topnavlist li a{
+	display: block;
+	position: relative;
+	z-index: 8889;
+	width: 75px;
+	height: 35px;
+}
+.header .popover{
+	position: relative;
+	z-index: 8889;
+	left: -235px;
+	color: #000;
+	max-width: 300px;
+	width: 300px;
+}
+.header .popover-content{
+	text-align: center;
+	padding: 0;
+}
+.header .userinfo .popover{
+	left: -160px;
+}
+.header .userinfo .popover .arrow{
+	margin-left: 45px;
+}
+.header .userinfo .user_portrait{
+	padding-top: 10px;
+}
+.header .userinfo .user_portrait img{
+	width: 100px;
+	height: 100px;
+}
+.login .select_portrait img,
+.header .userinfo .select_portrait img{
+	width: 18px;
+	height: 18px;
+	opacity: .5;
+	cursor: pointer;
+}
+.login .select_portrait .t,
+.header .userinfo .select_portrait .t{
+	opacity: 1;
+}
+.login .select_portrait img:hover,
+.header .userinfo .select_portrait img:hover{
+	opacity: 1;
+}
+.header .userinfo .user_name{
+	padding: 0 5px;
+}
+.header .userinfo .user_name input{
+	margin-bottom: 10px;
+}
+.header .userinfo .user_name input,
+.header .userinfo .user_name button{
+	border-radius: 0;
+}
+.header .theme .popover{
+	left: -235px;
+}
+.header .theme .popover .arrow{
+	margin-left: 115px;
+}
+.header .theme .popover img{
+	margin: 5px;
+	width: 80px;
+	height: 65px;
+}
+.header .theme .popover img:hover{
+	position: relative;
+	top: -3px;
+	box-shadow: 0 3px 15px #000;
+}
+
+
+
+
+
+.header li.userlist{
+	width: 100px;
+}
+.header .userlist .popover{
+	left: -80px;
+	width: 175px;
+}
+.header .userlist .popover-content{
+	max-height: 400px;
+}
+.header .userlist .popover .arrow{
+	margin-left: 20px;
+}
+.header .userlist .popover li{
+	text-align: left;
+	height: 35px;
+	line-height: 35px;
+	padding: 0 5px;
+}
+.header .userlist .popover li:hover{
+	background-color: #bbb;
+	cursor: pointer;
+}
+.header .userlist .popover li img{
+	width: 25px;
+	height: 25px;
+}
+.header .clapboard{
+	position: fixed;
+	z-index: 8888;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background-color: rgba(0,0,0,0.5);
+}
+
+ /*  -------------------------------------------------------login------------------------------- */
+
+.login .jumbotron{
+	background: none;
+	text-align: center;
+}
+
+
+
+.login .input-group{
+	margin: 10px auto;
+	max-width: 500px;
+}
+.login input:hover{
+	background-color: #fff;
+	box-shadow: none;
+}
+.login .input-group .btn{
+	border-left: none;
+}
+.login .input-group .btn:hover{
+	background-color: #fff;
+	box-shadow: none;
+	border-color: #ccc;
+}
+.login .footer{
+	font-size: 20px;
+	position: fixed;
+	z-index: 8888;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 35px;
+	line-height: 35px;
+	text-align: center;
+	color: #eee;
+	background-color: rgba(0,0,0,.3);
+}
+
+
+.login .footer span{
+	color: #f00;
+}
+
+ /*  -------------------------------------------------------rooms------------------------------- */

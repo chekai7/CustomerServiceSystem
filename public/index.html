@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>主頁</title>
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script src="/socket.io-client/dist/socket.io.js"></script>
+  </head>
+  <script type="text/javascript">
+
+  $(document).ready(function(){
+    var socket = io('localhost:1880');
+
+        $('#exampleModal').on('show.bs.modal', function (event) {
+          var button = $(event.relatedTarget)
+          var recipient = button.data('whatever')
+          var modal = $(this)
+          console.log(modal);
+          modal.find('.modal-body input').attr("placeholder", "Typing something in here");
+
+        })
+        $('#send1').click(function(event){
+          let custName=$('#recipient-name').val();
+          let staffName=$('#recipient-name1').val();
+          let score=$('#recipient-name2').val();
+          let contact=$('#recipient-name3').val();
+          let note=$('#message-text').val();
+          if(custName==""){
+            console.log("名字沒寫");
+              $( '#recipient-name' ).css('background-color','#FFB7DD').fadeOut(500);
+              $( '#recipient-name' ).css('background-color','#FFFFFF').fadeIn(500);
+              $( '#recipient-name' ).attr("placeholder", "務必填寫");
+          }else if (score=="") {
+              console.log("分數沒填");
+              $( '#recipient-name2' ).css('background-color','#FFB7DD').fadeOut("slow");
+              $( '#recipient-name2' ).css('background-color','#FFFFFF').fadeIn("fast");
+              $( '#recipient-name2' ).attr("placeholder", "務必填寫");
+          }else if (contact=="") {
+              console.log("聯絡資訊沒填");
+              $( '#recipient-name3' ).css('background-color','#FFB7DD').fadeOut("slow");
+              $( '#recipient-name3' ).css('background-color','#FFFFFF').fadeIn("fast");
+              $( '#recipient-name3' ).attr("placeholder", "務必填寫");
+          }else{
+            console.log(custName,staffName,score,note);
+            $('#exampleModal').modal('hide');
+            var data={
+              custNamecustName,
+              staffName:staffName,
+              score:score,
+              contact:contact,
+              note:note
+            }
+            $('#recipient-name').val("");
+            $('#recipient-name1').val("");
+            $('#recipient-name2').val("");
+            $('#recipient-name3').val("");
+            $('#message-text').val("");
+            socket.emit('hitscore',data);
+          }
+        })
+  });
+  </script>
+<body >
+  <br>
+  <div style="text-align:center;  vertical-align:middle;">
+    <button  id="customButton"style="vertical-align:middle;margin: 0px auto;" onclick="javascript:location.href='http://localhost:3000/custom.html'"><span>user </span></button>
+    <button  id="staffButton"style="vertical-align:middle;margin: 0px auto;" onclick="javascript:location.href='http://localhost:3000/Service.html'"><span>staff</span></button>
+    <button  id="adminButton"style="vertical-align:middle;margin: 0px auto;" onclick="javascript:location.href='http://localhost:3000/admin.html'"><span>admin</span></button>
+    <button  id="example1"   style="vertical-align:middle;margin: 0px auto;" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">建議</button>
+    <form class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"  >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel"><font face="DFKai-sb">感謝您的建議(★:  必填)</font></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="recipient-name" class="col-form-label" >★你的名字:</label>
+                <input type="text" class="form-control"name="eee" id="recipient-name" required="required"/>
+              </div>
+              <div class="form-group">
+                <label for="recipient-name1" class="col-form-label">客戶名字:</label>
+                <input type="text" class="form-control" id="recipient-name1" required/>
+              </div>
+              <div class="form-group">
+                <label for="recipient-name2" class="col-form-label">★分數:(1~10分)</label>
+                <input type="text" class="form-control" id="recipient-name2" required/>
+              </div>
+              <div class="form-group">
+                <label for="recipient-name2" class="col-form-label">★聯絡資訊:</label>
+                <input type="text" class="form-control" id="recipient-name3" required/>
+              </div>
+              <div class="form-group">
+                <label for="message-text" class="col-form-label">note:</label>
+                <textarea class="form-control" id="message-text"></textarea>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" id="send1" class="btn btn-primary" onclick="return false">Send message</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  <br><br>
+      <p id="showMessage"> </p>
+      <h1></h1>
+    </div>
+  </div>
+</body>
+</html>
